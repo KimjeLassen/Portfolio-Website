@@ -6,6 +6,7 @@ import About from './about'
 import Header from './header'
 import Footer from './footer'
 import './body.css'
+import Projects from './projects'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
+      <Route path="/projects" element={<Projects />} />
     </Routes>
     </div>
     <Footer />
