@@ -2,7 +2,9 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Progress } from "flowbite-react";
 
-export default function ProjectCard(props) {
+
+export default function ProjectCard (props){
+  console.log(props);
   var progress;
   var started = true;
   if (props.progress == undefined) {
@@ -15,7 +17,7 @@ export default function ProjectCard(props) {
     <div class="card">
       <div class="card-header">{props.name}</div>
       <div class="card-body card-header description">
-        <p class="card-text">{props.description}</p>
+        <p class="card-text">{props.short_desc}</p>
         <br></br>
       </div>
       <br></br>
