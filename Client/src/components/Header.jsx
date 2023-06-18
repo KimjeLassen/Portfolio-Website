@@ -14,6 +14,9 @@ export default function Header() {
             <Link to="/projects">
             <button className="projectsHeader button">Projects</button>
             </Link>
+            <Link to="/projects/create">
+            <button className="createProjectHeader button">Create Project</button>
+            </Link>
         </div>
         </>
     )
