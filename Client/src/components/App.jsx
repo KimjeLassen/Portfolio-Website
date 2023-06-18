@@ -7,6 +7,7 @@ import Header from "./header";
 import Footer from "./footer";
 import "./body.css";
 import Projects from "./projects";
+import CreateProject from "./createproject";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/create" element={<CreateProject />} />
           </Routes>
         </div>
         <Footer />

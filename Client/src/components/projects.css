@@ -52,3 +52,18 @@
     padding-bottom: 100px;
     padding-top: 100px;
   }
+  .project-area{
+    height: 200px;
+    width: 50%;
+    resize: none;
+    color: black;
+  }
+  .project-text{
+    width: 500px;
+    color: black;
+  }
+  .createProjectHeader {
+    position : absolute;
+    top:0;
+    right: 0;
+  }
