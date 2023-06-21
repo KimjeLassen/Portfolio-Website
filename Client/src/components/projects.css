@@ -20,3 +20,50 @@
     position: absolute;
     right: 5%;
   }
+  .card {
+    background-color: #2a2e32;
+    color: white;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 1em;
+    box-shadow: 0 0 1em black;
+    transition: box-shadow 300ms;
+    width: 50vh;
+    max-height: 40vh;
+  }
+  .card-body{
+    overflow: hidden;
+    max-height: 40vh;
+  }
+  .card-header{
+    min-height: 30px;
+    max-height: 30px;
+  }
+  .description{
+    overflow: hidden;
+    max-height: 19vh;
+    min-height: 19vh;
+  }
+  .container{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 100px;
+    padding-top: 100px;
+  }
+  .project-area{
+    height: 200px;
+    width: 50%;
+    resize: none;
+    color: black;
+  }
+  .project-text{
+    width: 500px;
+    color: black;
+  }
+  .createProjectHeader {
+    position : absolute;
+    top:0;
+    right: 0;
+  }
