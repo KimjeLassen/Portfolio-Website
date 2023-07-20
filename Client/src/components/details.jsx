@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import FetchProjects from "./fetchprojects";
+import ProjectCard from "./projectcard";
 export default function Details() {
     const [current, setCurrent] = useState(0);
-
-  const projectList = [<p>1</p>,
-  <p>2</p>];
+  
+  const projectList = FetchProjects();
+  
+  
   function nextProject() {
     setCurrent(current === projectList.length - 1 ? 0 : current + 1);
   }
@@ -23,7 +26,7 @@ export default function Details() {
           <div>
             {projectList.map(
               (projectList, index) =>
-                current === index && <div>{projectList}</div>
+                current === index && <div><ProjectCard name= {projectList.name} short_desc={projectList.short_desc} progress = {projectList.progress} link = {projectList.link}/></div>
             )}
           </div>
         </div>

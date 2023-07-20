@@ -26,7 +26,7 @@ export default function Footer() {
                         <li><text class="small text">Name: Kim Jong Engsted Lassen</text></li>
                         <li><text class="small text">E-mail: <a href="mailto: kimjelassen@yahoo.com">kimjelassen@yahoo.com</a></text></li>
                         <li><text class="small text">Phone: +45 51933074</text></li>
-                        <li><text class="small text">LinkedIn: <a target="_blank" href="https://www.linkedin.com">LinkedIn</a></text></li>
+                        <li><text class="small text">LinkedIn: <a target="_blank" href="www.linkedin.com/in/kim-jong-engsted-lassen-491385281">LinkedIn</a></text></li>
                     </ul>
                 </div>
             </div>
