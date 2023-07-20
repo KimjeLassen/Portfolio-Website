@@ -8,6 +8,7 @@ import Footer from "./footer";
 import "./body.css";
 import Projects from "./projects";
 import CreateProject from "./createproject";
+import Website from "./website";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/create" element={<CreateProject />} />
+            <Route path="/current" element={<Website/>}/>
           </Routes>
         </div>
         <Footer />

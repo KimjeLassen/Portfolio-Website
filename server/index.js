@@ -25,6 +25,9 @@ app.get("/projects/create", (req, res) => {
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
+app.get("/current", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
 
 http.listen(5000, () => {
   console.log("Example app listening on port 5000!");
@@ -69,5 +72,6 @@ app.post("/users/create", (req, res) => {
 app.get("/projects/get", (req, res) => {
   Project.findAll().then((projects) => {
     res.json(projects);
+    console.log("I AM BEING FETCHED");
   });
 });
