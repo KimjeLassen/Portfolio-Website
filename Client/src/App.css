@@ -7,7 +7,15 @@
   background-color: #2a2e32;
   color: white;
 }
-
+#uname, #psw {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  color : black;
+}
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -11,10 +11,10 @@ export default function Header() {
             <Link to="/about">
             <button className="aboutHeader button">About</button>
             </Link>
-            <Link to="/projects">
+            <Link to="/projekter">
             <button className="projectsHeader button">Projects</button>
             </Link>
-            <Link to="/projects/create">
+            <Link to="/projekter/create">
             <button className="createProjectHeader button">Create Project</button>
             </Link>
             <Link to="/current">

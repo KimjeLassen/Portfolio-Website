@@ -5,11 +5,12 @@ const bodyParser = require("body-parser");
 const http = require("http").createServer(app);
 const User = require("./database").User;
 const Project = require("./database").Project;
+const bcrypt = require("bcrypt");
 
 app.use("/", express.static(path.join(__dirname, "..", "client", "dist")));
 
 // Shows the index page on /charts route
-app.get("/projects", (req, res) => {
+app.get("/projekter", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
@@ -17,7 +18,11 @@ app.get("/about", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
-app.get("/projects/create", (req, res) => {
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
+
+app.get("/projekter/create", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
@@ -38,7 +43,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.post("/projects/create", (req, res) => {
+app.post("/projekter/create", (req, res) => {
   const { name, short_desc, long_desc, progress, link } = req.body;
   console.log(req.body)
   Project.create({
@@ -57,21 +62,49 @@ app.post("/projects/create", (req, res) => {
 });
 app.post("/users/create", (req, res) => {
   const { username, password } = req.body;
-  User.create({
-    username: username,
-    password: password,
-  })
-    .then((user) => {
-      res.send(user);
-    })
-    .catch((err) => {
-      res.send(err);
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(password, salt).then(hash => {
+      User.create({
+        username: username,
+        password: hash,
+      }).then((user) => {
+        res.send(user);
+      }).catch((err) => {
+        res.send(err);
     });
+    })    
+});
 });
 
-app.get("/projects/get", (req, res) => {
+function comparePasswords(password, hash) {
+  return bcrypt.compare(password, hash);
+}
+app.post("/users/login", (req, res) => {
+  const { username, password } = req.body;
+  User.findOne({
+    where: {
+      username: username,
+    },
+  }).then((user) => {
+    if (user) {
+      comparePasswords(password, user.password).then((result) => {
+        if (result) {
+          console.log("Password is correct");
+          res.status(200).send("Logged in");
+        } else {
+          console.log("Password is incorrect");
+          res.status(400).send("Unauthorized: Password is incorrect");
+        }
+      });
+    } else {
+      console.log("User not found");
+      res.status(400).send("User not found");
+    }
+  });
+});
+
+app.get("/projekter/get", (req, res) => {
   Project.findAll().then((projects) => {
     res.json(projects);
-    console.log("I AM BEING FETCHED");
   });
 });

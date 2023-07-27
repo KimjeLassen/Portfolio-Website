@@ -9,6 +9,7 @@ import "./body.css";
 import Projects from "./projects";
 import CreateProject from "./createproject";
 import Website from "./website";
+import Login from "./login";
 
 function App() {
   return (
@@ -19,9 +20,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/create" element={<CreateProject />} />
+            <Route path="/projekter" element={<Projects />} />
+            <Route path="/projekter/create" element={<CreateProject />} />
             <Route path="/current" element={<Website/>}/>
+            <Route path="/login" element={<Login/>}/>
           </Routes>
         </div>
         <Footer />

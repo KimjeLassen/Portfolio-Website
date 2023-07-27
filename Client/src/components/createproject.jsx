@@ -4,7 +4,7 @@ import axios from "axios";
 export default function CreateProject() {
     const postData = async () => {
         try {
-            await axios.post(`http://localhost:5000/projects/create`, {
+            await axios.post(`http://localhost:5000/projekter/create`, {
                 name: document.getElementById("projectName").value,
                 short_desc: document.getElementById("projectShort").value,
                 long_desc: document.getElementById("projectLong").value,
@@ -21,34 +21,34 @@ export default function CreateProject() {
     return (
         <div>
             <h1>Create Project</h1>
-            <form onSubmit={handleSubmit} action="/projects">
+            <form onSubmit={handleSubmit} action="/projekter">
                 <div className="form-group">
                 
-                    <label for="projectName">Project Name</label>
+                    <label for="projectName">Projekt Navn</label>
                     <br></br>
                     <input type="text" className="project-text" id="projectName" placeholder="Enter Project Name" required></input>
                     <br></br>
                     <br></br>
 
-                    <label for = "projectShort">Short Project Description</label>
+                    <label for = "projectShort">Kort Beskrivelse</label>
                     <br></br>
                     <textarea className="project-area" id="projectShort" placeholder="Enter a short project description" required></textarea>
                     <br></br>
                     <br></br>
 
-                    <label for = "projectLong">Long Project Description</label>
+                    <label for = "projectLong">Lang Beskrivelse</label>
                     <br></br>
                     <textarea className="project-area" id="projectLong" placeholder="Enter a longer project description" required></textarea>
                     <br></br>
                     <br></br>
 
-                    <label for = "projectLink">Project Link</label>
+                    <label for = "projectLink">Projekt Link</label>
                     <br></br>
                     <input type="text" className="project-text" id="projectLink" placeholder="Enter Project Link"></input>
                     <br></br>
                     <br></br>
 
-                    <label for = "projectProgress">Project Progress</label>
+                    <label for = "projectProgress">Projekt Fremgang</label>
                     <br></br>
                     <input type="number" className="project-text" id="projectProgress" placeholder="Enter Project Progress"></input>
                     <br></br><br></br><br></br>
